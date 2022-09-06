@@ -1,0 +1,86 @@
+<app-header></app-header>
+
+<div class="container m-5">
+    <div class="row m-3 col-12">
+        <h3 class="text-center">Select Year</h3>
+    </div>
+    <div class="row m-3 col-12">
+        <select class="form-select" [(ngModel)]="year" name="year" id="year" aria-label="Default select example">
+            <option value="0" selected>select year</option>
+            <option value="2022">2021-22</option>
+            <option value="2021">2020-21</option>
+            <option value="2020">2019-20</option>
+            <option value="2019">2018-19</option>
+            <option value="2018">2017-18</option>
+            <option value="2017">2016-17</option>
+        </select>
+    </div>
+    <div *ngIf="year.length == 4" class="row m-3 col-12">
+        <input type="submit" class="btn btn-primary m-1" value="Visited Companies" (click)="process(1)">
+        <input type="submit" class="btn btn-primary m-1" value="Students Placed" (click)="process(2)">
+    </div>
+</div>
+
+<div class="container" *ngIf="company_data.length > 0">
+    <h1>No. of companies visited: {{companies}}</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name Of the Company</th>
+                <th scope="col">No. Of Offers</th>
+                <th scope="col">Package Offered(LPA)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let record of company_data">
+                <td>{{record.name}}</td>
+                <td>{{record.no_of_offers}}</td>
+                <td>{{record.package}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="container" *ngIf="year_data.length > 0">
+    <h1>Total Offers: {{total}}</h1>
+    <hr />
+    <h2>Branchwise Details</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Branch</th>
+                <th scope="col">No. of Offers</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let inst of branchCount">
+                <td>{{getCourse(inst.branch)}}</td>
+                <td>{{inst.count}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr />
+    <h2>Students Details</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Roll No.</th>
+                <th scope="col">Name Of the Student</th>
+                <th scope="col">Branch</th>
+                <th scope="col">Company</th>
+                <th scope="col">Package (LPA)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let record of year_data">
+                <td>{{record.roll}}</td>
+                <td>{{record.name}}</td>
+                <td>{{getCourse(record.course)}}</td>
+                <td>{{record.company}}</td>
+                <td>{{record.package}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<app-footer></app-footer>

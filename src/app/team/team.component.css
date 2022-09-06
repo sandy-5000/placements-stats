@@ -1,0 +1,14 @@
+* p,
+* h1,
+* h2,
+* h3,
+* h4,
+* h5,
+* a,
+* label {
+    color: rgba(20, 20, 121, 0.74);
+}
+
+.team {
+    justify-content: center;
+}

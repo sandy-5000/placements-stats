@@ -1,0 +1,30 @@
+<app-header></app-header>
+
+<div class="container my-5" id="recruiters">
+    <div class="row">
+        <p class="display-6 fw-bold text-center">OUR RECRUITERS</p>
+    </div>
+    <div class="row">
+        <p class="text-center" style="color: rgb(26, 42, 210); font-size: 18px;">
+            Recruiters from some of the best companies in India and in the world have trusted the departments & students of JNTU Kakinada to bring them to great heights.
+        </p>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div *ngFor="let item of list" class="col-12 col-md-6 col-lg-3">
+            <div class="shadow menu-item-card p-3 mb-3">
+                <img src="../../assets/companies/{{item}}.png" class="menu-item-image w-100" style="height: 200px;" />
+                <h1 class="menu-card-title"></h1>
+                <!-- <a href="" class="menu-item-link">
+                            View All
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                </a> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

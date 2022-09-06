@@ -1,0 +1,16 @@
+.top {
+    height: 48px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 25px;
+    outline: none;
+    color: rgb(21, 48, 204);
+}
+
+.top:hover {
+    background-color: rgb(40, 58, 163);
+    color: aliceblue;
+}
